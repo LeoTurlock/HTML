@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>about:blank</title>
+    </head>
+    <body>
+        <style>
+            .everything {
+                margin: 0.5%;
+                padding: 0.5%;
+                border: 3px solid black;
+                border-radius: 15px;
+            }
+            .center {
+                padding: 5px;
+                margin-top: 5px;
+                border: 3px solid black;
+                border-radius: 10px;
+                margin-right: 78.5%;
+            }
+            .links {
+                padding: 5px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-right: 50%;
+                border: 3px solid black;
+                border-radius: 10px;
+            }
+        </style>
+        <script>
+        function create() {
+            var url = document.getElementById('input').value;
+            if (!url.startsWith('https://' && 'http://')) {
+                url = 'https://' + url
+            } else if (url.startsWith('https://' && 'http://')) {
+                url = url
+            }
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
+        </script>
+        <div class="everything">
+            <div class="">
+            <div class="container">
+                <div class="links">
+                    <h2>Links</h2>
+                    <p onclick="document.getElementById('input').value = 'matheducation.ml'">matheducation.ml</p>
+                </div>            
+            </div>
+
+            <div class="center">
+                <input type="text" value="" placeholder="URL" id='input' autofocus>
+                <button onclick='create()'>Create!</button>
+            </div>            
+        </div>
+
+    </body>
+</html>
