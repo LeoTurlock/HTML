@@ -10,22 +10,46 @@
                 padding: 0.5%;
                 border: 3px solid black;
                 border-radius: 15px;
+                width: 96%;
+                height: 96%;
+                position: absolute;
             }
-            .center {
+            .left {
+                float: left;
+            }
+            .middle {
+                float: right;
+                margin-right: 33.3%;
+            }
+            .right {
+
+            }
+            .URL_Input {
+                display: flex;
                 padding: 5px;
                 margin-top: 5px;
                 border: 3px solid black;
                 border-radius: 10px;
-                margin-right: 78.5%;
+                margin-right: 66.6%;
+                
             }
             .links {
-                padding: 5px;
-                margin-top: 5px;
+                padding-left: 15px;
                 margin-bottom: 5px;
-                margin-right: 50%;
+                margin-right: 66.6%;
                 border: 3px solid black;
                 border-radius: 10px;
             }
+            .link {
+                cursor: pointer;
+            }
+            .URL_to_QR {
+                padding: 5px;
+                margin-top: 5px;
+                border: 3px solid black;
+                border-radius: 10px;
+            }
+
         </style>
         <script>
         function create() {
@@ -48,18 +72,42 @@
         }
         </script>
         <div class="everything">
-            <div class="">
-            <div class="container">
-                <div class="links">
-                    <h2>Links</h2>
-                    <p onclick="document.getElementById('input').value = 'matheducation.ml'">matheducation.ml</p>
-                </div>            
+            <div class="left">
+                </div>
+                    <div title="Click this link and wait some seconds!" class="links">
+                        <h2>Links</h2>
+                        <p class="link" onclick="document.getElementById('input').value = 'matheducation.ml'; create(); document.getElementById('input').value = '';">matheducation.ml</p>
+                        <p class="link" onclick="var url = 'https:\\matheducation.ml/'; create()">matheducation.ml</p>
+                        <p class="link" onclick="url = 'https:\\amethyst-beta.ga/'; create()">amethyst-beta.ga</p>
+                    </div>
+
+                <div class="URL_Input">
+                    <input type="text" value="" placeholder="URL" id='input'>
+                    <button onclick='create()'>Create!</button>
+                </div>                
+            </div>
+            <div class="middle">
+                <div class="URL_to_QR">
+                    <h2>URL to QR Code</h2>
+                    <p>Enter a URL in the input field below to convert it to a QR code:</p>
+                    <input id="url-input" type="text" placeholder="URL">
+                    <script>
+                        function convertToQRCode() {
+                            var url = document.getElementById("url-input").value;
+                            var qrCode = document.getElementById("qr-code");
+                            qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
+                        }
+                    </script>
+                    <button onclick="convertToQRCode()">Convert to QR Code</button>
+                    <br>
+                    <br>
+                    <img id="qr-code" src="" alt="">
+
+                </div>
+
             </div>
 
-            <div class="center">
-                <input type="text" value="" placeholder="URL" id='input' autofocus>
-                <button onclick='create()'>Create!</button>
-            </div>            
+
         </div>
 
     </body>
