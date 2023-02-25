@@ -85,7 +85,7 @@
                 border-radius: 10px;
             }
 
-            #input:hover {
+            #url-input:hover {
                 background-color: #a3def0;
                 border: 2px solid #e6e6e6;
                 border-radius: 10px;
@@ -96,6 +96,111 @@
     <body>
         <div id="container">
             <div class="left">
+                <script>
+                    function create() {                        
+                        var url = document.getElementById('url-input').value;
+                        if (!url.startsWith('https://' && 'http://')) {
+                            url = 'https://' + url
+                        } else if (url.startsWith('https://' && 'http://')) {
+                            url = url
+                        }
+                        
+                        
+                        
+                        var win = window.open();
+                        win.document.body.style.margin = '0';
+                        win.document.body.style.height = '100vh';
+                        var iframe = win.document.createElement('iframe');
+                        iframe.style.border = 'none';
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.margin = '0';
+                        iframe.src = url;
+                        win.document.body.appendChild(iframe);
+                    }
+        
+                    function full_link_list_open() {
+                        var win = window.open()
+                        var container = win.document.createElement('container');
+                        var div = win.document.createElement('div');
+                        var title = win.document.createElement('div');
+                        title.innerHTML += '<h2>Full link list</h2>'
+                        div.innerHTML += '<h4>Rammerhead:</h4>'
+                        const rammerheadArray = [
+                            'https://rh.thebesthistoryhelp.gq/',
+                            'https://realproxyservice.cf/',
+                            'https://realproxyservice.ga/',
+                            'https://realproxyservice.gq/',
+                            'https://www.realproxyservice.ml/',
+                            'https://www.realproxyservice.ga/',
+                            'https://www.realproxyservice.tk/',
+                            'https://www.realproxyservice.gq/',
+                            'https://thisisa.realproxyservice.cf/',
+                            'https://thisisa.realproxyservice.ml/',
+                            'https://thisisa.realproxyservice.ga/',
+                            'https://thisisa.realproxyservice.tk/',
+                            'https://thisisa.realproxyservice.gq/',
+                            'https://youareata.realproxyservice.cf/',
+                            'https://youareata.realproxyservice.ml/',
+                            'https://youareata.realproxyservice.ga/',
+                            'https://youareata.realproxyservice.tk/',
+                            'https://youareata.realproxyservice.gq/',
+                            'https://usea.realproxyservice.cf/',
+                            'https://usea.realproxyservice.ml/',
+                            'https://usea.realproxyservice.ga/',
+                            'https://usea.realproxyservice.tk/',
+                            'https://usea.realproxyservice.gq/',
+                            'https://rammerheadisa.realproxyservice.cf/',
+                            'https://rammerheadisa.realproxyservice.ml/',
+                            'https://rammerheadisa.realproxyservice.ga/',
+                            'https://rammerheadisa.realproxyservice.tk/',
+                            'https://rammerheadisa.realproxyservice.gq/',
+                            'https://chrome.lhost.dev/',
+                            'https://blocked.lhost.dev/',
+                            'https://tabs.lhost.dev/',
+                            'https://poodle.xn--unup4y/'
+                        ]
+                        div.innerHTML += rammerheadArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Shuttle:</h4>'
+                        const shuttleArray = [
+                            ''
+                        ]
+                        div.innerHTML += shuttleArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Ultraviolet:</h4>'
+                        const ultravioletArray = [
+                            'Ultraviolet-3.helloamiliano.repl.co',
+                            'Ultraviolet-4.helloamiliano.repl.co',
+                            'Ultraviolet.helloamiliano.repl.co',
+                            'Ultra-violet.helloamiliano.repl.co',
+                            'Ultraviolet-node-1.helloamiliano.repl.co'
+                        ]
+                        div.innerHTML += ultravioletArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Abyss:</h4>'
+                        const abyssArray = [
+                            'https://abyss.thebesthistoryhelp.gq/',
+                            'day.ssott.com',
+                            'fish.socalfishkillaz.com',
+                            'winter.thinksnow.net'
+                        ]
+                        div.innerHTML += abyssArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Hypertabs:</h4>'
+                        const hypertabsArray = [
+                            ''
+                        ]
+                        div.innerHTML += hypertabsArray.join('<br>')
+    
+                        container.style.margin = '10px'
+                        container.style.position = 'absolute'
+                        container.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
+                        win.document.body.appendChild(container)
+                        container.appendChild(title)
+                        container.appendChild(div)
+                    }
+                </script>
                 <div class="links">
                     <div>
                         <h2>Links</h2>
@@ -131,6 +236,13 @@
                 </div>
 
             </div>
+            <script>
+                function convertToQRCode() {
+                    var url = document.getElementById("url-input").value;
+                    var qrCode = document.getElementById("qr-code");
+                    qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
+                }
+            </script>
 
             <div class="middle">
                 <div class="URL_to_QR">
@@ -143,8 +255,10 @@
                     </script>
                     <h2>URL to QR Code</h2>
                     <p>Enter a URL in the input field below to convert it to a QR code:</p>
-                    <input type="text" placeholder=" URL" id="url-input">
-                    <button onclick="convertToQRCode()" class="createButton">Convert to QR Code</button>
+                    <div class="URL_Input">
+                        <input type="text" placeholder=" URL" id="url-input">
+                        <button onclick="convertToQRCode()" class="createButton">Convert to QR Code</button>    
+                    </div>
                     <br>
                     <br>
                     <center>
@@ -158,119 +272,9 @@
             <div class="right">
                 <h2>News</h2>
                 <div>
-                    <p>Join our <p style="cursor: pointer; ">discord<p> server to get the latest file, more links and support our development!</p>
+                    <p>Join our discord server to get the latest file, more links and support our development!</p>
                 </div>
             </div>
-            <script>
-                function create() {
-                    if (url === null) {
-                        alert('Please enter a URL!');
-                        return;
-                    }
-                    
-                    var url = document.getElementById('input').value;
-                    if (!url.startsWith('https://' && 'http://')) {
-                        url = 'https://' + url
-                    } else if (url.startsWith('https://' && 'http://')) {
-                        url = url
-                    }
-                    
-                    
-                    
-                    var win = window.open();
-                    win.document.body.style.margin = '0';
-                    win.document.body.style.height = '100vh';
-                    var iframe = win.document.createElement('iframe');
-                    iframe.style.border = 'none';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    iframe.style.margin = '0';
-                    iframe.src = url;
-                    win.document.body.appendChild(iframe);
-                }
-    
-                function full_link_list_open() {
-                    var win = window.open()
-                    var container = win.document.createElement('container');
-                    var div = win.document.createElement('div');
-                    var title = win.document.createElement('div');
-                    title.innerHTML += '<h2>Full link list</h2>'
-                    div.innerHTML += '<h4>Rammerhead:</h4>'
-                    const rammerheadArray = [
-                        'https://rh.thebesthistoryhelp.gq/',
-                        'https://realproxyservice.cf/',
-                        'https://realproxyservice.ga/',
-                        'https://realproxyservice.gq/',
-                        'https://www.realproxyservice.ml/',
-                        'https://www.realproxyservice.ga/',
-                        'https://www.realproxyservice.tk/',
-                        'https://www.realproxyservice.gq/',
-                        'https://thisisa.realproxyservice.cf/',
-                        'https://thisisa.realproxyservice.ml/',
-                        'https://thisisa.realproxyservice.ga/',
-                        'https://thisisa.realproxyservice.tk/',
-                        'https://thisisa.realproxyservice.gq/',
-                        'https://youareata.realproxyservice.cf/',
-                        'https://youareata.realproxyservice.ml/',
-                        'https://youareata.realproxyservice.ga/',
-                        'https://youareata.realproxyservice.tk/',
-                        'https://youareata.realproxyservice.gq/',
-                        'https://usea.realproxyservice.cf/',
-                        'https://usea.realproxyservice.ml/',
-                        'https://usea.realproxyservice.ga/',
-                        'https://usea.realproxyservice.tk/',
-                        'https://usea.realproxyservice.gq/',
-                        'https://rammerheadisa.realproxyservice.cf/',
-                        'https://rammerheadisa.realproxyservice.ml/',
-                        'https://rammerheadisa.realproxyservice.ga/',
-                        'https://rammerheadisa.realproxyservice.tk/',
-                        'https://rammerheadisa.realproxyservice.gq/',
-                        'https://chrome.lhost.dev/',
-                        'https://blocked.lhost.dev/',
-                        'https://tabs.lhost.dev/',
-                        'https://poodle.xn--unup4y/'
-                    ]
-                    div.innerHTML += rammerheadArray.join('<br>')
-
-                    div.innerHTML += '<h4>Shuttle:</h4>'
-                    const shuttleArray = [
-                        ''
-                    ]
-                    div.innerHTML += shuttleArray.join('<br>')
-
-                    div.innerHTML += '<h4>Ultraviolet:</h4>'
-                    const ultravioletArray = [
-                        'Ultraviolet-3.helloamiliano.repl.co',
-                        'Ultraviolet-4.helloamiliano.repl.co',
-                        'Ultraviolet.helloamiliano.repl.co',
-                        'Ultra-violet.helloamiliano.repl.co',
-                        'Ultraviolet-node-1.helloamiliano.repl.co'
-                    ]
-                    div.innerHTML += ultravioletArray.join('<br>')
-
-                    div.innerHTML += '<h4>Abyss:</h4>'
-                    const abyssArray = [
-                        'https://abyss.thebesthistoryhelp.gq/',
-                        'day.ssott.com',
-                        'fish.socalfishkillaz.com',
-                        'winter.thinksnow.net'
-                    ]
-                    div.innerHTML += abyssArray.join('<br>')
-
-                    div.innerHTML += '<h4>Hypertabs:</h4>'
-                    const hypertabsArray = [
-                        ''
-                    ]
-                    div.innerHTML += hypertabsArray.join('<br>')
-
-                    container.style.margin = '10px'
-                    container.style.position = 'absolute'
-                    container.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
-                    win.document.body.appendChild(container)
-                    container.appendChild(title)
-                    container.appendChild(div)
-                }
-            </script>
         </div>
     </body>
 </html>
