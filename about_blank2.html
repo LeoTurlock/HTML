@@ -8,6 +8,7 @@
                 width: 100%;
                 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 cursor: context-menu;
+                overflow:hidden;
             }
             
             #container {
@@ -19,7 +20,7 @@
                 height: auto;
                 margin: 10px;
                 width: 30%;
-                height: 675px;
+                height: 635px;
                 padding: 10px;
                 border: 3px solid black;
                 border-radius: 10px;
@@ -30,7 +31,7 @@
                 height: auto;
                 margin: 10px;
                 width: 30%;
-                height: 675px;
+                height: 635px;
                 padding: 10px;
                 border: 3px solid black;
                 border-radius: 10px;
@@ -41,7 +42,7 @@
                 height: auto;
                 margin: 10px;
                 width: 30%;
-                height: 675px;
+                height: 635px;
                 padding: 10px;
                 border: 3px solid black;
                 border-radius: 10px;
@@ -89,6 +90,24 @@
                 background-color: #a3def0;
                 border: 2px solid #e6e6e6;
                 border-radius: 10px;
+            }
+
+            #qr-url-input {
+                background-color: #ffffff;
+                border: 2px solid #e6e6e6;
+                border-radius: 10px;
+            }
+
+            #qr-url-input:hover {
+                background-color: #a3def0;
+                border: 2px solid #e6e6e6;
+                border-radius: 10px;
+            }
+
+            #qr-code {
+                padding: 5px;
+                border: 3px solid black;
+                border-radius: 20px;
             }
 
         </style>
@@ -238,7 +257,7 @@
             </div>
             <script>
                 function convertToQRCode() {
-                    var url = document.getElementById("url-input").value;
+                    var url = document.getElementById("qr-url-input").value;
                     var qrCode = document.getElementById("qr-code");
                     qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
                 }
@@ -248,7 +267,7 @@
                 <div class="URL_to_QR">
                     <script>
                         function convertToQRCode() {
-                            var url = document.getElementById("url-input").value;
+                            var url = document.getElementById("qr-url-input").value;
                             var qrCode = document.getElementById("qr-code");
                             qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
                         }
@@ -256,13 +275,16 @@
                     <h2>URL to QR Code</h2>
                     <p>Enter a URL in the input field below to convert it to a QR code:</p>
                     <div class="URL_Input">
-                        <input type="text" placeholder=" URL" id="url-input">
+                        <input type="text" placeholder=" URL" id="qr-url-input">
                         <button onclick="convertToQRCode()" class="createButton">Convert to QR Code</button>    
                     </div>
                     <br>
                     <br>
                     <center>
-                        <img id="qr-code" src="" alt="">                        
+                        <br>
+                        <br>
+
+                        <img id="qr-code" src="https://i.imgur.com/SMNUgnl.png" alt="">                        
                     </center>
 
 
