@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <title>about:blank</title>
+    <head>
+        <style>
+            html, body {
+                height: 100%;
+                width: 100%;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                cursor: context-menu;
+            }
+            
+            #container {
+                display: flex;
+            }
+
+            .left {
+                width: auto;
+                height: auto;
+                margin: 10px;
+                width: 30%;
+                height: 675px;
+                padding: 10px;
+                border: 3px solid black;
+                border-radius: 10px;
+            }
+
+            .middle {
+                width: auto;
+                height: auto;
+                margin: 10px;
+                width: 30%;
+                height: 675px;
+                padding: 10px;
+                border: 3px solid black;
+                border-radius: 10px;
+            }
+
+            .right {
+                width: auto;
+                height: auto;
+                margin: 10px;
+                width: 30%;
+                height: 675px;
+                padding: 10px;
+                border: 3px solid black;
+                border-radius: 10px;
+            }
+
+            .URL_Input {
+                padding: 5px;
+                border: 3px solid black;
+                border-radius: 20px;
+                position: absolute;
+            }
+
+            .link {
+                cursor: pointer;
+                color: #3c83d4;
+            }
+
+            .link:hover {
+                text-decoration: underline;
+            }
+
+            .link:link, .link:visited {
+                color: #922db1;
+            }
+
+            .createButton:hover {
+                background-color: #6dd643;
+                border: 2px solid #e6e6e6;
+                border-radius: 10px;
+            }
+
+            .createButton {
+                background-color: #ffffff;
+                border: 2px solid #e6e6e6;
+                border-radius: 10px;
+            }
+
+            #url-input {
+                background-color: #ffffff;
+                border: 2px solid #e6e6e6;
+                border-radius: 10px;
+            }
+
+            #url-input:hover {
+                background-color: #a3def0;
+                border: 2px solid #e6e6e6;
+                border-radius: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="left">
+                <script>
+                    function create() {                        
+                        var url = document.getElementById('url-input').value;
+                        if (!url.startsWith('https://' && 'http://')) {
+                            url = 'https://' + url
+                        } else if (url.startsWith('https://' && 'http://')) {
+                            url = url
+                        }
+                        
+                        
+                        
+                        var win = window.open();
+                        win.document.body.style.margin = '0';
+                        win.document.body.style.height = '100vh';
+                        var iframe = win.document.createElement('iframe');
+                        iframe.style.border = 'none';
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.margin = '0';
+                        iframe.src = url;
+                        win.document.body.appendChild(iframe);
+                    }
+        
+                    function full_link_list_open() {
+                        var win = window.open()
+                        var container = win.document.createElement('container');
+                        var div = win.document.createElement('div');
+                        var title = win.document.createElement('div');
+                        title.innerHTML += '<h2>Full link list</h2>'
+                        div.innerHTML += '<h4>Rammerhead:</h4>'
+                        const rammerheadArray = [
+                            'https://rh.thebesthistoryhelp.gq/',
+                            'https://realproxyservice.cf/',
+                            'https://realproxyservice.ga/',
+                            'https://realproxyservice.gq/',
+                            'https://www.realproxyservice.ml/',
+                            'https://www.realproxyservice.ga/',
+                            'https://www.realproxyservice.tk/',
+                            'https://www.realproxyservice.gq/',
+                            'https://thisisa.realproxyservice.cf/',
+                            'https://thisisa.realproxyservice.ml/',
+                            'https://thisisa.realproxyservice.ga/',
+                            'https://thisisa.realproxyservice.tk/',
+                            'https://thisisa.realproxyservice.gq/',
+                            'https://youareata.realproxyservice.cf/',
+                            'https://youareata.realproxyservice.ml/',
+                            'https://youareata.realproxyservice.ga/',
+                            'https://youareata.realproxyservice.tk/',
+                            'https://youareata.realproxyservice.gq/',
+                            'https://usea.realproxyservice.cf/',
+                            'https://usea.realproxyservice.ml/',
+                            'https://usea.realproxyservice.ga/',
+                            'https://usea.realproxyservice.tk/',
+                            'https://usea.realproxyservice.gq/',
+                            'https://rammerheadisa.realproxyservice.cf/',
+                            'https://rammerheadisa.realproxyservice.ml/',
+                            'https://rammerheadisa.realproxyservice.ga/',
+                            'https://rammerheadisa.realproxyservice.tk/',
+                            'https://rammerheadisa.realproxyservice.gq/',
+                            'https://chrome.lhost.dev/',
+                            'https://blocked.lhost.dev/',
+                            'https://tabs.lhost.dev/',
+                            'https://poodle.xn--unup4y/'
+                        ]
+                        div.innerHTML += rammerheadArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Shuttle:</h4>'
+                        const shuttleArray = [
+                            ''
+                        ]
+                        div.innerHTML += shuttleArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Ultraviolet:</h4>'
+                        const ultravioletArray = [
+                            'Ultraviolet-3.helloamiliano.repl.co',
+                            'Ultraviolet-4.helloamiliano.repl.co',
+                            'Ultraviolet.helloamiliano.repl.co',
+                            'Ultra-violet.helloamiliano.repl.co',
+                            'Ultraviolet-node-1.helloamiliano.repl.co'
+                        ]
+                        div.innerHTML += ultravioletArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Abyss:</h4>'
+                        const abyssArray = [
+                            'https://abyss.thebesthistoryhelp.gq/',
+                            'day.ssott.com',
+                            'fish.socalfishkillaz.com',
+                            'winter.thinksnow.net'
+                        ]
+                        div.innerHTML += abyssArray.join('<br>')
+    
+                        div.innerHTML += '<h4>Hypertabs:</h4>'
+                        const hypertabsArray = [
+                            ''
+                        ]
+                        div.innerHTML += hypertabsArray.join('<br>')
+    
+                        container.style.margin = '10px'
+                        container.style.position = 'absolute'
+                        container.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
+                        win.document.body.appendChild(container)
+                        container.appendChild(title)
+                        container.appendChild(div)
+                    }
+                </script>
+                <div class="links">
+                    <div>
+                        <h2>Links</h2>
+                        <h4>Use the following links:</h3>
+                    </div>
+                    <div title="Click this link and wait some seconds!" class="link_list">
+
+                        <p class="link" onclick="document.getElementById('input').value = 'eaglercraftx.pages.dev'; create(); document.getElementById('input').value = '';">Minecraft</p>
+                        <p class="link" onclick="document.getElementById('input').value = 'docs-opensocial.googleusercontent.com/gadgets/ifr?url=https:\/\/cdn.jsdelivr.net/gh/ko1ov/to@1e8a949f89fcf2b110640c41a0705db01405d161/d7uf4.xml#'; create(); document.getElementById('input').value = '';">1v1.lol</p>
+                        <p class="link" onclick="document.getElementById('input').value = 'matheducation.ml'; create(); document.getElementById('input').value = '';">Unblocker 1</p>
+                        <p class="link" onclick="document.getElementById('input').value = 'amethyst-beta.ga'; create(); document.getElementById('input').value = '';">Unblocker 2</p>
+                        <p class="link" onclick="document.getElementById('input').value = 'shuttleproxy.com'; create(); document.getElementById('input').value = '';">Unblocker 3</p>
+                        <p class="link" onclick="document.getElementById('input').value = 'ptqaglmz.lol', create(); document.getElementById('input').value = '';">Unblocker 4</p>
+                    </div>
+
+                    <div>
+                        <h5>Please note that some of the links are down or blocked by your schools network.</h5>
+                        <h4>Or type in your own one!</h3>                        
+                    </div>
+
+                    <div class="URL_Input">
+                        <input type="text" value="" placeholder=" URL" id='url-input'>
+                        <button class="createButton" onclick='create()'>Create!</button>
+                    </div>
+
+                    <div>
+                        <br>
+                        <br>
+                        <h5>Please note that all URL's aren't working because the site you are trying to reach has it's 'X-Frame-Options' set to 'sameorigin'.</h5>
+                        <h5>Use a unblocker to reach the site instead.</h5>
+                        <h4 onclick="full_link_list_open()" class="link">Full link list</h4>
+                    </div>
+                </div>
+
+            </div>
+            <script>
+                function convertToQRCode() {
+                    var url = document.getElementById("url-input").value;
+                    var qrCode = document.getElementById("qr-code");
+                    qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
+                }
+            </script>
+
+            <div class="middle">
+                <div class="URL_to_QR">
+                    <script>
+                        function convertToQRCode() {
+                            var url = document.getElementById("url-input").value;
+                            var qrCode = document.getElementById("qr-code");
+                            qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
+                        }
+                    </script>
+                    <h2>URL to QR Code</h2>
+                    <p>Enter a URL in the input field below to convert it to a QR code:</p>
+                    <div class="URL_Input">
+                        <input type="text" placeholder=" URL" id="url-input">
+                        <button onclick="convertToQRCode()" class="createButton">Convert to QR Code</button>    
+                    </div>
+                    <br>
+                    <br>
+                    <center>
+                        <img id="qr-code" src="" alt="">                        
+                    </center>
+
+
+                </div>
+            </div>
+
+            <div class="right">
+                <h2>News</h2>
+                <div>
+                    <p>Join our discord server to get the latest file, more links and support our development!</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
