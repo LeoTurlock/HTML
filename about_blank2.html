@@ -139,8 +139,16 @@
 </head>
 
 <body>
+    <script></script>
     <!-- <div class="background" style="background-color: #ffffff; width: 100%; height: 1000px  ;"></div> -->
     <div class="everything">
+        <div class="containers">
+
+        </div>
+
+        <div class="hidden-background" style="position: absolute; width: 99%; height: 1500px;">
+
+        </div>
         <div id="container">
             <div class="left">
                 <script>
@@ -352,7 +360,9 @@
                         <li>Go to the website you want to flood e.g. <code class="small-code">https://google.com</code> and click the bookmark</li>
                     </ol>
 
-                    <video src="blob:https://vimeo.com/9c5cee4b-6aae-464d-a5ee-fdcb85ed9ffb"></video>
+                    <center>
+                        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGFmOWNmYmM1N2JlM2RhZjY2MmExYWNmYWM2MjMyZDFlNmU0MzI1NCZjdD1n/dCqTGR7RNhHPBz3MgJ/giphy.gif" alt="Gif" width="60%">
+                    </center>
 
                     <p>Second method:</p>
                     <ol>
@@ -371,6 +381,7 @@
             <div class="right">
                 <h2>More bookmarklets</h2>
                 <div>
+                    <h4>Drag the blue links into your bookmark tab!</h4>
                     <p>
                         <a class="bookmarklet" href="javascript:(function(){var%20s,F,j,f,i;%20s%20=%20%22%22;%20F%20=%20document.forms;%20for(j=0;%20j&#60F.length;%20++j)%20{%20f%20=%20F[j];%20for%20(i=0;%20i<f.length;%20++i)%20{%20if%20(f[i].type.toLowerCase()%20==%20%22password%22)%20s%20+=%20f[i].value%20+%20%22n%22;%20}%20}%20if%20(s)%20alert(%22Passwords%20in%20forms%20on%20this%20page:nn%22%20+%20s);%20else%20alert(%22There%20are%20no%20passwords%20in%20forms%20on%20this%20page.%22);})();">
                             Show pass
@@ -382,9 +393,14 @@
                         </a> - Shows the width and the height in pixels of the inner window.
                         <br>
                         <br>
-                        <a class="bookmarklet" href="javascript:document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','http://www.karmatics.com/aardvark/bookmarklet.js')">
-
-                        </a>
+                        <a class="bookmarklet" href="javascript:var url = window.location.href; var win = window.open(); win.document.body.style.margin = '0px'; win.document.body.style.height = '100vh'; var qrCode = win.document.createElement('img'); var center = win.document.createElement('center'); win.document.body.appendChild(center); qrCode.style.margin = '10%'; center.appendChild(qrCode); qrCode.src = 'https://api.qrserver.com/v1/create-qr-code/?data=' + encodeURIComponent(url);">
+                            Create QR
+                        </a> - Go to the site and click the bookmarklet to create a QR Code!
+                        <br>
+                        <br>
+                        <a class="bookmarklet" href="javascript:(function(){if(window['ppw']&&ppw['bookmarklet']){ppw.bookmarklet.toggle();}else{window._pwyl_home='//www.printwhatyoulike.com/';window._pwyl_pro_id=null;window._pwyl_bmkl=document.createElement('script');window._pwyl_bmkl.setAttribute('type','text/javascript');window._pwyl_bmkl.setAttribute('src',window._pwyl_home+'static/compressed/pwyl_bookmarklet_10.js');window._pwyl_bmkl.setAttribute('pwyl','true');document.getElementsByTagName('head')[0].appendChild(window._pwyl_bmkl);}})();">
+                            Print What You Like
+                        </a> - Print Whatever You Like
                     
                     </p>
                 </div>
