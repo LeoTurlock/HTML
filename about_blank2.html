@@ -8,7 +8,7 @@
             height: 100%;
             width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            cursor: context-menu;
+            cursor: crosshair;
             display: contents;
             background-image: url("https://img.freepik.com/premium-vector/seamless-pattern_1159-5086.jpg");
 
@@ -139,273 +139,285 @@
 </head>
 
 <body>
-    <script></script>
-    <!-- <div class="background" style="background-color: #ffffff; width: 100%; height: 1000px  ;"></div> -->
-    <div class="everything">
-        <div class="containers">
+    <script>
+        document.onkeypress = function (e) {
+            e = e || window.event;
+            const source = document.getElementById('everything');
+            const hide = document.createElement('div');
+            hide.setAttribute("id", "hide");
+            hide.style.cssText = 'z-index: 2; background-color: #ffffff; position: absolute; width: 100%; height: 3000px;';
+            if (e.keyCode === 13) {
+                source.appendChild(hide);
+                console.log('hidden');
+            } else if (e.keyCode === 44) {
+                document.getElementById('hide').remove();
+                console.log('shown');
+            };
+        };
+    </script>
 
-        </div>
+    <div id="everything">
+        <div class="containers" style="z-index: 1; position: absolute;">
+            <div id="container">
+                <div class="left">
+                    <script>
+                        function create() {
+                            var url = document.getElementById('url-input').value;
+                            if (!url.startsWith('https://' && 'http://')) {
+                                url = 'https://' + url
+                            } else if (url.startsWith('https://' && 'http://')) {
+                                url = url
+                            }
 
-        <div class="hidden-background" style="position: absolute; width: 99%; height: 1500px;">
-
-        </div>
-        <div id="container">
-            <div class="left">
-                <script>
-                    function create() {
-                        var url = document.getElementById('url-input').value;
-                        if (!url.startsWith('https://' && 'http://')) {
-                            url = 'https://' + url
-                        } else if (url.startsWith('https://' && 'http://')) {
-                            url = url
+                            var win = window.open();
+                            win.document.body.style.margin = '0';
+                            win.document.body.style.height = '100vh';
+                            var iframe = win.document.createElement('iframe');
+                            iframe.style.border = 'none';
+                            iframe.style.width = '100%';
+                            iframe.style.height = '100%';
+                            iframe.style.margin = '0';
+                            iframe.src = url;
+                            win.document.body.appendChild(iframe);
                         }
 
-                        var win = window.open();
-                        win.document.body.style.margin = '0';
-                        win.document.body.style.height = '100vh';
-                        var iframe = win.document.createElement('iframe');
-                        iframe.style.border = 'none';
-                        iframe.style.width = '100%';
-                        iframe.style.height = '100%';
-                        iframe.style.margin = '0';
-                        iframe.src = url;
-                        win.document.body.appendChild(iframe);
-                    }
+                        function full_link_list_open() {
+                            var win = window.open()
+                            var container = win.document.createElement('container');
+                            var div = win.document.createElement('div');
+                            var title = win.document.createElement('div');
+                            title.innerHTML += '<h2>Full link list</h2>'
+                            div.innerHTML += '<h4>Rammerhead:</h4>'
+                            const rammerheadArray = [
+                                'https://rh.thebesthistoryhelp.gq/',
+                                'https://realproxyservice.cf/',
+                                'https://realproxyservice.ga/',
+                                'https://realproxyservice.gq/',
+                                'https://www.realproxyservice.ml/',
+                                'https://www.realproxyservice.ga/',
+                                'https://www.realproxyservice.tk/',
+                                'https://www.realproxyservice.gq/',
+                                'https://thisisa.realproxyservice.cf/',
+                                'https://thisisa.realproxyservice.ml/',
+                                'https://thisisa.realproxyservice.ga/',
+                                'https://thisisa.realproxyservice.tk/',
+                                'https://thisisa.realproxyservice.gq/',
+                                'https://youareata.realproxyservice.cf/',
+                                'https://youareata.realproxyservice.ml/',
+                                'https://youareata.realproxyservice.ga/',
+                                'https://youareata.realproxyservice.tk/',
+                                'https://youareata.realproxyservice.gq/',
+                                'https://usea.realproxyservice.cf/',
+                                'https://usea.realproxyservice.ml/',
+                                'https://usea.realproxyservice.ga/',
+                                'https://usea.realproxyservice.tk/',
+                                'https://usea.realproxyservice.gq/',
+                                'https://rammerheadisa.realproxyservice.cf/',
+                                'https://rammerheadisa.realproxyservice.ml/',
+                                'https://rammerheadisa.realproxyservice.ga/',
+                                'https://rammerheadisa.realproxyservice.tk/',
+                                'https://rammerheadisa.realproxyservice.gq/',
+                                'https://chrome.lhost.dev/',
+                                'https://blocked.lhost.dev/',
+                                'https://tabs.lhost.dev/',
+                                'https://poodle.xn--unup4y/'
+                            ]
+                            div.innerHTML += rammerheadArray.join('<br>')
 
-                    function full_link_list_open() {
-                        var win = window.open()
-                        var container = win.document.createElement('container');
-                        var div = win.document.createElement('div');
-                        var title = win.document.createElement('div');
-                        title.innerHTML += '<h2>Full link list</h2>'
-                        div.innerHTML += '<h4>Rammerhead:</h4>'
-                        const rammerheadArray = [
-                            'https://rh.thebesthistoryhelp.gq/',
-                            'https://realproxyservice.cf/',
-                            'https://realproxyservice.ga/',
-                            'https://realproxyservice.gq/',
-                            'https://www.realproxyservice.ml/',
-                            'https://www.realproxyservice.ga/',
-                            'https://www.realproxyservice.tk/',
-                            'https://www.realproxyservice.gq/',
-                            'https://thisisa.realproxyservice.cf/',
-                            'https://thisisa.realproxyservice.ml/',
-                            'https://thisisa.realproxyservice.ga/',
-                            'https://thisisa.realproxyservice.tk/',
-                            'https://thisisa.realproxyservice.gq/',
-                            'https://youareata.realproxyservice.cf/',
-                            'https://youareata.realproxyservice.ml/',
-                            'https://youareata.realproxyservice.ga/',
-                            'https://youareata.realproxyservice.tk/',
-                            'https://youareata.realproxyservice.gq/',
-                            'https://usea.realproxyservice.cf/',
-                            'https://usea.realproxyservice.ml/',
-                            'https://usea.realproxyservice.ga/',
-                            'https://usea.realproxyservice.tk/',
-                            'https://usea.realproxyservice.gq/',
-                            'https://rammerheadisa.realproxyservice.cf/',
-                            'https://rammerheadisa.realproxyservice.ml/',
-                            'https://rammerheadisa.realproxyservice.ga/',
-                            'https://rammerheadisa.realproxyservice.tk/',
-                            'https://rammerheadisa.realproxyservice.gq/',
-                            'https://chrome.lhost.dev/',
-                            'https://blocked.lhost.dev/',
-                            'https://tabs.lhost.dev/',
-                            'https://poodle.xn--unup4y/'
-                        ]
-                        div.innerHTML += rammerheadArray.join('<br>')
+                            div.innerHTML += '<h4>Shuttle:</h4>'
+                            const shuttleArray = [
+                                'https://shuttle.cf/',
+                                'https://shuttle.ga/'
+                            ]
+                            div.innerHTML += shuttleArray.join('<br>')
 
-                        div.innerHTML += '<h4>Shuttle:</h4>'
-                        const shuttleArray = [
-                            'https://shuttle.cf/',
-                            'https://shuttle.ga/'
-                        ]
-                        div.innerHTML += shuttleArray.join('<br>')
+                            div.innerHTML += '<h4>Ultraviolet:</h4>'
+                            const ultravioletArray = [
+                                'Ultraviolet-3.helloamiliano.repl.co',
+                                'Ultraviolet-4.helloamiliano.repl.co',
+                                'Ultraviolet.helloamiliano.repl.co',
+                                'Ultra-violet.helloamiliano.repl.co',
+                                'Ultraviolet-node-1.helloamiliano.repl.co'
+                            ]
+                            div.innerHTML += ultravioletArray.join('<br>')
 
-                        div.innerHTML += '<h4>Ultraviolet:</h4>'
-                        const ultravioletArray = [
-                            'Ultraviolet-3.helloamiliano.repl.co',
-                            'Ultraviolet-4.helloamiliano.repl.co',
-                            'Ultraviolet.helloamiliano.repl.co',
-                            'Ultra-violet.helloamiliano.repl.co',
-                            'Ultraviolet-node-1.helloamiliano.repl.co'
-                        ]
-                        div.innerHTML += ultravioletArray.join('<br>')
+                            div.innerHTML += '<h4>Abyss:</h4>'
+                            const abyssArray = [
+                                'https://abyss.thebesthistoryhelp.gq/',
+                                'day.ssott.com',
+                                'fish.socalfishkillaz.com',
+                                'winter.thinksnow.net'
+                            ]
+                            div.innerHTML += abyssArray.join('<br>')
 
-                        div.innerHTML += '<h4>Abyss:</h4>'
-                        const abyssArray = [
-                            'https://abyss.thebesthistoryhelp.gq/',
-                            'day.ssott.com',
-                            'fish.socalfishkillaz.com',
-                            'winter.thinksnow.net'
-                        ]
-                        div.innerHTML += abyssArray.join('<br>')
+                            div.innerHTML += '<h4>Hypertabs:</h4>'
+                            const hypertabsArray = [
+                                ''
+                            ]
+                            div.innerHTML += hypertabsArray.join('<br>')
 
-                        div.innerHTML += '<h4>Hypertabs:</h4>'
-                        const hypertabsArray = [
-                            ''
-                        ]
-                        div.innerHTML += hypertabsArray.join('<br>')
+                            div.innerHTML += '<h4>Utopia:</h4>'
+                            const utopiaArray = [
+                                'https://www.learn.gq/ ',
+                            ]
+                            div.innerHTML += utopiaArray.join('<br>')
 
-                        div.innerHTML += '<h4>Utopia:</h4>'
-                        const utopiaArray = [
-                            'https://www.learn.gq/ ',
-                        ]
-                        div.innerHTML += utopiaArray.join('<br>')
+                            div.innerHTML += '<h4>Gxme Hub:</h4>'
+                            const gxmeHubArray = [
+                                'https://xlegends.github.io/gxmehub/index.html',
+                                ''
+                            ]
+                            div.innerHTML += gxmeHubArray.join('<br>')
 
-                        div.innerHTML += '<h4>Gxme Hub:</h4>'
-                        const gxmeHubArray = [
-                            'https://xlegends.github.io/gxmehub/index.html',
-                            ''
-                        ]
-                        div.innerHTML += gxmeHubArray.join('<br>')
+                            div.innerHTML += '<br> <br> <br>'
 
-                        div.innerHTML += '<br> <br> <br>'
-
-                        container.style.margin = '10px'
-                        container.style.position = 'absolute'
-                        container.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
-                        win.document.body.appendChild(container)
-                        container.appendChild(title)
-                        container.appendChild(div)
-                    }
-                </script>
-                <div class="links">
-                    <div>
-                        <h2>Links</h2>
-                        <h4>Use the following links:</h3>
-                    </div>
-                    <div title="Click this link and wait some seconds!" class="link_list">
-                        <p class="link" onclick="document.getElementById('url-input').value = 'eaglercraft-bj5.pages.dev'; create(); document.getElementById('url-input').value = '';">Minecraft 1.5.2  </p>
-                        <p class="link" onclick="document.getElementById('url-input').value = 'eaglercraftx.pages.dev'; create(); document.getElementById('url-input').value = '';">Minecraft 1.8.8</p>
-                        <p class="link" onclick="document.getElementById('url-input').value = 'docs-opensocial.googleusercontent.com/gadgets/ifr?url=https:\/\/cdn.jsdelivr.net/gh/ko1ov/to@1e8a949f89fcf2b110640c41a0705db01405d161/d7uf4.xml#'; create(); document.getElementById('url-input').value = '';">1v1.lol</p>
-                        <p class="link" onclick="document.getElementById('url-input').value = 'matheducation.ml'; create(); document.getElementById('url-input').value = '';">Unblocker 1</p>
-                        <p class="link" onclick="document.getElementById('url-input').value = 'amethyst-beta.ga'; create(); document.getElementById('url-input').value = '';">Unblocker 2</p>
-                        <p class="link" onclick="document.getElementById('url-input').value = 'shuttleproxy.com'; create(); document.getElementById('url-input').value = '';">Unblocker 3</p>
-                        <p class="link" onclick="document.getElementById('url-input').value = 'ptqaglmz.lol', create(); document.getElementById('url-input').value = '';">Unblocker 4</p>
-                    </div>
-
-                    <div>
-                        <h5>Please note that some of the links are down or blocked by your schools network.</h5>
-                        <h4>Or type in your own one!</h3>
-                    </div>
-
-                    <div class="URL_Input">
-                        <input type="text" value="" placeholder=" URL" id='url-input'>
-                        <button class="createButton" onclick='create()'>Create!</button>
-                    </div>
-
-                    <div>
-                        <br>
-                        <br>
-                        <h5>Please note that all URL's aren't working because the site you are trying to reach has it's
-                            'X-Frame-Options' set to 'sameorigin'. Use a unblocker to reach the site instead.</h5>
-                        <h4 onclick="full_link_list_open()" class="link">Full link list</h4>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="middle">
-                <div class="URL_to_QR">
-                    <script>
-                        function convertToQRCode() {
-                            var url = document.getElementById("qr-url-input").value;
-                            var qrCode = document.getElementById("qr-code");
-                            qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
+                            container.style.margin = '10px'
+                            container.style.position = 'absolute'
+                            container.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
+                            win.document.body.appendChild(container)
+                            container.appendChild(title)
+                            container.appendChild(div)
                         }
                     </script>
-                    <h2>URL to QR Code</h2>
-                    <p>Enter a URL in the input field below to convert it to a QR code:</p>
-                    <div class="URL_Input">
-                        <input type="text" placeholder=" URL" id="qr-url-input">
-                        <button onclick="convertToQRCode()" class="createButton">Convert to QR Code</button>
+                    <div class="links">
+                        <div>
+                            <h2>Links</h2>
+                            <h4>Use the following links:</h3>
+                        </div>
+                        <div title="Click this link and wait some seconds!" class="link_list">
+                            <p class="link" onclick="document.getElementById('url-input').value = 'eaglercraft-bj5.pages.dev'; create(); document.getElementById('url-input').value = '';">Minecraft 1.5.2  </p>
+                            <p class="link" onclick="document.getElementById('url-input').value = 'eaglercraftx.pages.dev'; create(); document.getElementById('url-input').value = '';">Minecraft 1.8.8</p>
+                            <p class="link" onclick="document.getElementById('url-input').value = 'docs-opensocial.googleusercontent.com/gadgets/ifr?url=https:\/\/cdn.jsdelivr.net/gh/ko1ov/to@1e8a949f89fcf2b110640c41a0705db01405d161/d7uf4.xml#'; create(); document.getElementById('url-input').value = '';">1v1.lol</p>
+                            <p class="link" onclick="document.getElementById('url-input').value = 'matheducation.ml'; create(); document.getElementById('url-input').value = '';">Unblocker 1</p>
+                            <p class="link" onclick="document.getElementById('url-input').value = 'amethyst-beta.ga'; create(); document.getElementById('url-input').value = '';">Unblocker 2</p>
+                            <p class="link" onclick="document.getElementById('url-input').value = 'shuttleproxy.com'; create(); document.getElementById('url-input').value = '';">Unblocker 3</p>
+                            <p class="link" onclick="document.getElementById('url-input').value = 'ptqaglmz.lol', create(); document.getElementById('url-input').value = '';">Unblocker 4</p>
+                        </div>
+
+                        <div>
+                            <h5>Please note that some of the links are down or blocked by your schools network.</h5>
+                            <h4>Or type in your own one!</h3>
+                        </div>
+
+                        <div class="URL_Input">
+                            <input type="text" value="" placeholder=" URL" id='url-input'>
+                            <button class="createButton" onclick='create()'>Create!</button>
+                        </div>
+
+                        <div>
+                            <br>
+                            <br>
+                            <h5>Please note that all URL's aren't working because the site you are trying to reach has it's
+                                'X-Frame-Options' set to 'sameorigin'. Use a unblocker to reach the site instead.</h5>
+                            <h4 onclick="full_link_list_open()" class="link">Full link list</h4>
+                        </div>
                     </div>
-                    <br>
-                    <br>
-                    <center>
+
+                </div>
+
+                <div class="middle">
+                    <div class="URL_to_QR">
+                        <script>
+                            function convertToQRCode() {
+                                var url = document.getElementById("qr-url-input").value;
+                                var qrCode = document.getElementById("qr-code");
+                                qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(url);
+                            }
+                        </script>
+                        <h2>URL to QR Code</h2>
+                        <p>Enter a URL in the input field below to convert it to a QR code:</p>
+                        <div class="URL_Input">
+                            <input type="text" placeholder=" URL" id="qr-url-input">
+                            <button onclick="convertToQRCode()" class="createButton">Convert to QR Code</button>
+                        </div>
                         <br>
                         <br>
-                        <img id="qr-code" src="https://i.imgur.com/SMNUgnl.png" alt="">
-                    </center>
+                        <center>
+                            <br>
+                            <br>
+                            <img id="qr-code" src="https://i.imgur.com/SMNUgnl.png" alt="">
+                        </center>
 
 
+                    </div>
+                </div>
+
+                <div class="right">
+                    <h2>News</h2>
+                    <div>
+                        <p>Join our discord server to get the latest file, more links and support our development!</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="right">
-                <h2>News</h2>
-                <div>
-                    <p>Join our discord server to get the latest file, more links and support our development!</p>
+            <div id="container2">
+                <div class="left">
+                    <h2>Tips n' Tricks</h2>
+                    <div>
+                        <p>Press <code class="small-code">Ctrl + Shift + W</code> to hide the screen</p>
+                    </div>
+                </div>
+                <div class="middle">
+                    <a style="text-decoration: none;" href="javascript:var num=prompt('History flood amount:');done=false;x=window.location.href;for(var i=1; i<=num; i++){history.pushState(0, 0, i==num?x:i.toString());if(i==num){done=true}}if(done===true){alert('History flood successful!\n'+window.location.href+' now appears in your history '+num+(num == 1?' time.':' times. (ajaxdev)'))}">
+                        <h2 style="color: #000000; text-decoration: underline;" class="link">History Flooder</h2>
+                    </a>
+                    <div>
+                        <p>First method:</p>
+                        <ol>
+                            <li>Drag the title into you bookmarks</li>
+                            <li>Go to the website you want to flood e.g. <code class="small-code">https://google.com</code> and click the bookmark</li>
+                        </ol>
+
+                        <center>
+                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGFmOWNmYmM1N2JlM2RhZjY2MmExYWNmYWM2MjMyZDFlNmU0MzI1NCZjdD1n/dCqTGR7RNhHPBz3MgJ/giphy.gif" alt="Gif" width="60%">
+                        </center>
+
+                        <p>Second method:</p>
+                        <ol>
+                            <li>Go to the website you want to flood</li>
+                            <li>Type in <code class="small-code">javascript:</code> in the search bar</li>
+                            <li>The paste in the following code:</li>
+                        </ol>
+                        <br>
+                        <div class="code">
+                            <code>
+                                var num=prompt("History flood amount:");done=false;x=window.location.href;for (var i=1; i<=num; i++){history.pushState(0, 0, i==num?x:i.toString());if(i==num){done=true}}if(done===true){alert("History flood successful! "+window.location.href+" now appears in your history "+num+(num==1?" time.":" times. (ajaxdev)"))}
+                            </code>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <h2>More bookmarklets</h2>
+                    <div>
+                        <h4>Drag the blue links into your bookmark tab!</h4>
+                        <p>
+                            <a class="bookmarklet" href="javascript:(function(){var%20s,F,j,f,i;%20s%20=%20%22%22;%20F%20=%20document.forms;%20for(j=0;%20j&#60F.length;%20++j)%20{%20f%20=%20F[j];%20for%20(i=0;%20i<f.length;%20++i)%20{%20if%20(f[i].type.toLowerCase()%20==%20%22password%22)%20s%20+=%20f[i].value%20+%20%22n%22;%20}%20}%20if%20(s)%20alert(%22Passwords%20in%20forms%20on%20this%20page:nn%22%20+%20s);%20else%20alert(%22There%20are%20no%20passwords%20in%20forms%20on%20this%20page.%22);})();">
+                                Show pass
+                            </a> - Shows hidden passwords in password fields
+                            <br>
+                            <br>
+                            <a class="bookmarklet" href="javascript:alert('Window inner dimensions:\n\n   '+document.body.clientWidth+' x '+document.body.clientHeight)">
+                                Get size
+                            </a> - Shows the width and the height in pixels of the inner window.
+                            <br>
+                            <br>
+                            <a class="bookmarklet" href="javascript:var url = window.location.href; var win = window.open(); win.document.body.style.margin = '0px'; win.document.body.style.height = '100vh'; var qrCode = win.document.createElement('img'); var center = win.document.createElement('center'); win.document.body.appendChild(center); qrCode.style.margin = '10%'; center.appendChild(qrCode); qrCode.src = 'https://api.qrserver.com/v1/create-qr-code/?data=' + encodeURIComponent(url);">
+                                Create QR
+                            </a> - Go to the site and click the bookmarklet to create a QR Code!
+                            <br>
+                            <br>
+                            <a class="bookmarklet" href="javascript:(function(){if(window['ppw']&&ppw['bookmarklet']){ppw.bookmarklet.toggle();}else{window._pwyl_home='//www.printwhatyoulike.com/';window._pwyl_pro_id=null;window._pwyl_bmkl=document.createElement('script');window._pwyl_bmkl.setAttribute('type','text/javascript');window._pwyl_bmkl.setAttribute('src',window._pwyl_home+'static/compressed/pwyl_bookmarklet_10.js');window._pwyl_bmkl.setAttribute('pwyl','true');document.getElementsByTagName('head')[0].appendChild(window._pwyl_bmkl);}})();">
+                                Print What You Like
+                            </a> - Print Whatever You Like
+                        
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="container2">
-            <div class="left">
-                <h2>Tips n' Tricks</h2>
-                <div>
-                    <p>Press <code class="small-code">Ctrl + Shift + W</code> to hide the screen</p>
-                </div>
-            </div>
-            <div class="middle">
-                <a style="text-decoration: none;" href="javascript:var num=prompt('History flood amount:');done=false;x=window.location.href;for(var i=1; i<=num; i++){history.pushState(0, 0, i==num?x:i.toString());if(i==num){done=true}}if(done===true){alert('History flood successful!\n'+window.location.href+' now appears in your history '+num+(num == 1?' time.':' times. (ajaxdev)'))}">
-                    <h2 style="color: #000000; text-decoration: underline;" class="link">History Flooder</h2>
-                </a>
-                <div>
-                    <p>First method:</p>
-                    <ol>
-                        <li>Drag the title into you bookmarks</li>
-                        <li>Go to the website you want to flood e.g. <code class="small-code">https://google.com</code> and click the bookmark</li>
-                    </ol>
-
-                    <center>
-                        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGFmOWNmYmM1N2JlM2RhZjY2MmExYWNmYWM2MjMyZDFlNmU0MzI1NCZjdD1n/dCqTGR7RNhHPBz3MgJ/giphy.gif" alt="Gif" width="60%">
-                    </center>
-
-                    <p>Second method:</p>
-                    <ol>
-                        <li>Go to the website you want to flood</li>
-                        <li>Type in <code class="small-code">javascript:</code> in the search bar</li>
-                        <li>The paste in the following code:</li>
-                    </ol>
-                    <br>
-                    <div class="code">
-                        <code>
-                            var num=prompt("History flood amount:");done=false;x=window.location.href;for (var i=1; i<=num; i++){history.pushState(0, 0, i==num?x:i.toString());if(i==num){done=true}}if(done===true){alert("History flood successful! "+window.location.href+" now appears in your history "+num+(num==1?" time.":" times. (ajaxdev)"))}
-                        </code>
-                    </div>
-                </div>
-            </div>
-            <div class="right">
-                <h2>More bookmarklets</h2>
-                <div>
-                    <h4>Drag the blue links into your bookmark tab!</h4>
-                    <p>
-                        <a class="bookmarklet" href="javascript:(function(){var%20s,F,j,f,i;%20s%20=%20%22%22;%20F%20=%20document.forms;%20for(j=0;%20j&#60F.length;%20++j)%20{%20f%20=%20F[j];%20for%20(i=0;%20i<f.length;%20++i)%20{%20if%20(f[i].type.toLowerCase()%20==%20%22password%22)%20s%20+=%20f[i].value%20+%20%22n%22;%20}%20}%20if%20(s)%20alert(%22Passwords%20in%20forms%20on%20this%20page:nn%22%20+%20s);%20else%20alert(%22There%20are%20no%20passwords%20in%20forms%20on%20this%20page.%22);})();">
-                            Show pass
-                        </a> - Shows hidden passwords in password fields
-                        <br>
-                        <br>
-                        <a class="bookmarklet" href="javascript:alert('Window inner dimensions:\n\n   '+document.body.clientWidth+' x '+document.body.clientHeight)">
-                            Get size
-                        </a> - Shows the width and the height in pixels of the inner window.
-                        <br>
-                        <br>
-                        <a class="bookmarklet" href="javascript:var url = window.location.href; var win = window.open(); win.document.body.style.margin = '0px'; win.document.body.style.height = '100vh'; var qrCode = win.document.createElement('img'); var center = win.document.createElement('center'); win.document.body.appendChild(center); qrCode.style.margin = '10%'; center.appendChild(qrCode); qrCode.src = 'https://api.qrserver.com/v1/create-qr-code/?data=' + encodeURIComponent(url);">
-                            Create QR
-                        </a> - Go to the site and click the bookmarklet to create a QR Code!
-                        <br>
-                        <br>
-                        <a class="bookmarklet" href="javascript:(function(){if(window['ppw']&&ppw['bookmarklet']){ppw.bookmarklet.toggle();}else{window._pwyl_home='//www.printwhatyoulike.com/';window._pwyl_pro_id=null;window._pwyl_bmkl=document.createElement('script');window._pwyl_bmkl.setAttribute('type','text/javascript');window._pwyl_bmkl.setAttribute('src',window._pwyl_home+'static/compressed/pwyl_bookmarklet_10.js');window._pwyl_bmkl.setAttribute('pwyl','true');document.getElementsByTagName('head')[0].appendChild(window._pwyl_bmkl);}})();">
-                            Print What You Like
-                        </a> - Print Whatever You Like
-                    
-                    </p>
-                </div>
-            </div>
         </div>
+
         
     </div>
 
