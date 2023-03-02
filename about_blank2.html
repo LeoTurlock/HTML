@@ -144,15 +144,29 @@
             e = e || window.event;
             const source = document.getElementById('everything');
             const hide = document.createElement('div');
-            hide.setAttribute("id", "hide");
+            const hideInfo = document.createElement('img')
+            hideInfo.src = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_534259.png&f=1&nofb=1&ipt=0eb3f064ceee21518cdeabb9e0fc9d03650477f2f0e9c83f4a211faf805c3970&ipo=images'
+            hideInfo.style.filter = "grayscale(20%)";
+            hideInfo.style.width = '10px'
+            hideInfo.style.height = '10px'
+            hideInfo.title = 'Press \' to unhide'
+            hideInfo.style.margin = '5px'
+            hide.setAttribute('id', 'hide');
+            hideInfo.setAttribute('id', 'hideInfo')
             hide.style.cssText = 'z-index: 2; background-color: #ffffff; position: absolute; width: 100%; height: 3000px;';
-            if (e.keyCode === 13) {
-                source.appendChild(hide);
-                console.log('hidden');
-            } else if (e.keyCode === 44) {
-                document.getElementById('hide').remove();
-                console.log('shown');
-            };
+            if (e.keyCode === 39) {
+                const ifObj = document.getElementById('hide')
+                if (ifObj) {
+                    ifObj.remove();
+                    console.log('Shown');
+                } else if (!ifObj) {
+                    source.appendChild(hide);
+                    document.getElementById('hide').appendChild(hideInfo)
+                    document.getElementById('hide').scrollIntoView()
+                    console.log('Hidden');
+                    return;
+                }
+            }
         };
     </script>
 
@@ -354,7 +368,9 @@
                 <div class="left">
                     <h2>Tips n' Tricks</h2>
                     <div>
-                        <p>Press <code class="small-code">Ctrl + Shift + W</code> to hide the screen</p>
+                        <p>Press <code class="small-code">'</code> to hide the screen</p>
+                        <p>Use our amazing history flooder to hide your sneaky peaky stuff!</p>
+                        <p></p>
                     </div>
                 </div>
                 <div class="middle">
@@ -415,15 +431,7 @@
                 </div>
             </div>
         </div>
-
-        </div>
-
-        
     </div>
-
-
-
-
 </body>
 
 </html>
