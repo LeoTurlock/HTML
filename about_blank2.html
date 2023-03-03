@@ -444,11 +444,11 @@
                     <h2>Settings</h2>
                     <div>
                         <h4>First gradient backgound color:</h4>
-                        <input id="firstColorForBackground" type="color" style="width: 100px;">
+                        <input id="bg_pick1" type="color" style="width: 100px;">
                     </div>
                     <div>
                         <h4>Second gradient backgound color:</h4>
-                        <input onchange="changeGradientBackground2()" id="secondColorForBackground" type="color" style="width: 100px;">
+                        <input id="bg_pick2" type="color" onchange="changeGbg2(event)" style="width: 100px;">
                     </div>
 
                     <div>
@@ -458,17 +458,27 @@
                                 //document.body.style.cssText = 'background-color: linear-gradient(to right, '
                             }
 
-                            function changeGradientBackground1() {   
+                            function changeGradientBackground1() {
 
                             }
 
-                            function changeGradientBackground2() {   
+                            function changeGbg() {
 
-}
+                            }
+
+                            function changeGbg2(ev) {
+                                const color = ev.target.value;
+                                const r = parseInt(color.substr(1,2), 16)
+                                const g = parseInt(color.substr(3,2), 16)
+                                const b = parseInt(color.substr(5,2), 16)
+                                const rgb = [r, g, b]
+                                console.log(`Background set to: red: ${r}, green: ${g}, blue: ${b}`)
+
+                                Document.body.style.cssText = 'background-image: linear-gradient(to-right, red' + ' , rgb(' + `${r}, ${g}, ${b}` + ');'
+                            }
                         </script>
                         <button onclick="applySettings()" id="settingsApplyButton">Apply Settings</button>
                     </div>
-                    
                 </div>
             </div>
 
