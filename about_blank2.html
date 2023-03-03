@@ -25,6 +25,11 @@
             position: relative;
         }
 
+        #container2 {
+            display: flex;
+            position: relative;
+        }
+
         .left {
             width: auto;
             height: auto;
@@ -160,6 +165,7 @@
                 if (ifObj) {
                     ifObj.remove();
                     console.log('Shown');
+                    return;
                 } else if (!ifObj) {
                     source.appendChild(hide);
                     document.getElementById('hide').appendChild(hideInfo)
@@ -432,6 +438,40 @@
                     </div>
                 </div>
             </div>
+
+            <div id="container3">
+                <div class="left">
+                    <h2>Settings</h2>
+                    <div>
+                        <h4>First gradient backgound color:</h4>
+                        <input id="firstColorForBackground" type="color" style="width: 100px;">
+                    </div>
+                    <div>
+                        <h4>Second gradient backgound color:</h4>
+                        <input onchange="changeGradientBackground2()" id="secondColorForBackground" type="color" style="width: 100px;">
+                    </div>
+
+                    <div>
+                        <br>
+                        <script>
+                            function applySettings() {
+                                //document.body.style.cssText = 'background-color: linear-gradient(to right, '
+                            }
+
+                            function changeGradientBackground1() {   
+
+                            }
+
+                            function changeGradientBackground2() {   
+
+}
+                        </script>
+                        <button onclick="applySettings()" id="settingsApplyButton">Apply Settings</button>
+                    </div>
+                    
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
