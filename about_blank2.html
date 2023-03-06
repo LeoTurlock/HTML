@@ -175,6 +175,13 @@
                 }
             }
         };
+    
+        function copyDiscord() {
+        navigator.clipboard.writeText('discord.gg/G9q7ECFcQr');
+
+        // Alert the copied text
+        alert("Successfully copied the invite link!");
+        }
     </script>
 
     <div id="everything">
@@ -183,9 +190,9 @@
                 <div class="left">
                     <script>
                         function create() {
-                            var url = document.getElementById('url-input').value;
+                            var url = document.getElementById('url-input').value.toString();
                             if (!url.startsWith('https://' || 'http://')) {
-                                url = 'http://' + url
+                                url = 'https://' + url
                             }
 
                             if (url.startsWith('https://' || 'http://')) {
@@ -314,11 +321,11 @@
                             <p class="link" onclick="document.getElementById('url-input').value = 'docs-opensocial.googleusercontent.com/gadgets/ifr?url=https:\/\/cdn.jsdelivr.net/gh/ko1ov/to@1e8a949f89fcf2b110640c41a0705db01405d161/d7uf4.xml#'; create(); document.getElementById('url-input').value = '';">1v1.lol</p>
                             <p class="link" onclick="document.getElementById('url-input').value = 'oddpvp.github.io/unblockedgames/play/paperio/'; create(); document.getElementById('url-input').value = '';">Paper.io 2</p>
                             <p class="link" onclick="document.getElementById('url-input').value = 'oddpvp.github.io/unblockedgames/play/tunnelrush/'; create(); document.getElementById('url-input').value = '';">Tunnelrush</p>
+                            <p class="link" onclick="document.getElementById('url-input').value = 'oddpvp.github.io/unblockedgames/play/slope/', create(); document.getElementById('url-input').value = '';">Slope</p>
                             <p class="link" onclick="document.getElementById('url-input').value = 'ptqaglmz.lol', create(); document.getElementById('url-input').value = '';">Unblocker</p>
                         </div>
 
                         <div>
-                            <h5>If Minecraft doesn't work for you, use a unblocker and type in minecraftforfreex.com</h5>
                             <h5>Please note that some of the links are down or blocked by your schools network.</h5>
                         </div>
 
@@ -369,6 +376,7 @@
                     <h2>News</h2>
                     <div>
                         <p>Join our discord server to get the latest file, more links and support our development!</p>
+                        <p title="Click me to copy the discord invite link!" class="link" onclick="copyDiscord()">discord.gg/G9q7ECFcQr</p>
                     </div>
                 </div>
             </div>
@@ -380,7 +388,7 @@
                         <p>Press <code class="small-code">'</code> to hide the screen from your teachers.</p>
                         <p>Use our amazing history flooder to hide your sneaky peaky stuff!</p>
                         <p>Share this file with your friends!</p>
-                        <p>Join the <a style="text-decoration: none; text-decoration: underline; color: #4183C4;" class="links" onclick="alert('discord.gg/G9q7ECFcQr')">discord server</a>!</p>
+                        <p>Join the <a style="cursor: pointer; text-decoration: none; color: #4183C4;" class="link" onclick="alert('discord.gg/G9q7ECFcQr')">discord server</a>!</p>
                     </div>
                 </div>
                 <div class="middle">
